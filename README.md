@@ -1,104 +1,40 @@
-📈 Cryptocurrency Volatility Prediction System
+# CrytpoCurrencyVolatilityPrediction
 
-This project predicts short-term cryptocurrency volatility using historical market data and machine learning.
-It is designed to help understand market risk and price instability.
+A machine learning-based forecasting tool designed to predict the 7-day rolling volatility of cryptocurrencies. This project utilizes historical market data to help investors and analysts quantify risk through an interactive web interface.
 
-🔍 Project Objective
+## 🚀 Overview
+Predicting volatility is essential for risk management in the highly fluctuating crypto market. This system processes raw OHLC (Open, High, Low, Close) data, engineers advanced financial indicators, and uses a Random Forest Regressor to forecast market "noisiness" over a weekly window.
 
-To build a machine learning system that:
+## ✨ Key Features
+* **Predictive Modeling:** Forecasts 7-day rolling standard deviation (volatility) with high precision.
+* **Advanced Feature Engineering:** Includes custom-built indicators like Liquidity Ratio, HL Spread, and Open-Close Change.
+* **Technical Indicators:** Integrated Average True Range (ATR) and Bollinger Bands for deeper market context.
+* **Interactive Deployment:** A user-friendly Streamlit dashboard for real-time inference and "what-if" scenario testing.
+* **Explainable AI:** Visualizes Feature Importance to show which market metrics (like volume or price spread) are driving the volatility.
 
-Analyzes historical cryptocurrency data
+## 📈 Model Performance
+Evaluated on the 20% time-based test split (`14,147` records) using a `RandomForestRegressor`:
 
-Predicts 7-day rolling volatility
+| Metric | Value |
+| :--- | :--- |
+| **R² Score (R-squared)** | `0.4615` |
+| **Mean Absolute Error (MAE)** | `0.0203` |
+| **Mean Squared Error (MSE)** | `0.0012` |
 
-Visualizes predictions through a Streamlit dashboard
+## 🛠️ Tech Stack
+* **Language:** Python 3.x
+* **Libraries:** Pandas, NumPy, Scikit-learn, Joblib
+* **Model:** Random Forest Regressor
+* **UI/Deployment:** Streamlit
 
-📊 Dataset Description
+## 📊 Exploratory Data Analysis (EDA)
+During the analysis phase, we discovered:
+* **Volatility Clustering:** High volatility periods tend to follow one another, especially during sharp price drops.
+* **Spread Correlation:** A strong positive correlation exists between the High-Low Spread and upcoming volatility.
+* **Liquidity Impact:** Lower Liquidity Ratios (Volume/Market Cap) often signal higher susceptibility to price swings.
 
-The dataset contains daily market data for multiple cryptocurrencies, including:
-
-Open, High, Low, Close prices (OHLC)
-
-Trading Volume
-
-Market Capitalization
-
-Date and cryptocurrency name
-
-(Dataset is not included due to size constraints.)
-
-⚙️ Workflow
-
-Data Loading – Load OHLC, volume, and market cap data
-
-Data Preprocessing – Handle missing values and infinite values
-
-Feature Engineering
-
-Daily returns
-
-7-day rolling volatility (target)
-
-Liquidity ratio (Volume / Market Cap)
-
-Price spreads
-
-Technical indicators (Bollinger Bands, ATR)
-
-Model Training
-
-Random Forest Regressor
-
-80% training, 20% testing (time-based split)
-
-Model Evaluation
-
-MAE
-
-RMSE
-
-R² Score
-
-Deployment
-
-Interactive Streamlit application (local)
-
-🤖 Machine Learning Model
-
-Algorithm: Random Forest Regressor
-
-Problem Type: Regression
-
-Target Variable: 7-day rolling volatility
-
-📈 Model Evaluation Metrics
-
-Mean Absolute Error (MAE)
-
-Root Mean Squared Error (RMSE)
-
-R² Score
-
-🖥️ Streamlit Application
-
-Features:
-
-Cryptocurrency selection dropdown
-
-Actual vs Predicted volatility plot
-
-Model performance metrics
-
-
-🚀 How to Run the Project
-pip install -r requirements.txt
-streamlit run app.py
-
-📝 Notes
-
-Dataset is excluded due to file size limits
-
-Pre-trained model files are included
-
-The project is intended for academic and learning purposes
-
+## ⚙️ Installation & Usage
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Dimple-S-2004/CrytpoCurrencyVolatilityPrediction.git](https://github.com/Dimple-S-2004/CrytpoCurrencyVolatilityPrediction.git)
+   cd CrytpoCurrencyVolatilityPrediction/MLProject
